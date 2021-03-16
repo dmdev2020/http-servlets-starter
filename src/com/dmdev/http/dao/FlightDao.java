@@ -3,6 +3,8 @@ package com.dmdev.http.dao;
 import com.dmdev.http.entity.Flight;
 import com.dmdev.http.entity.FlightStatus;
 import com.dmdev.http.util.ConnectionManager;
+import lombok.NoArgsConstructor;
+import lombok.SneakyThrows;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,6 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static lombok.AccessLevel.PRIVATE;
+
+@NoArgsConstructor(access = PRIVATE)
 public class FlightDao implements Dao<Long, Flight> {
 
     private static final FlightDao INSTANCE = new FlightDao();
@@ -20,10 +25,8 @@ public class FlightDao implements Dao<Long, Flight> {
             FROM flight
             """;
 
-    private FlightDao() {
-    }
-
     @Override
+    @SneakyThrows
     public List<Flight> findAll() {
         try (var connection = ConnectionManager.get();
              var preparedStatement = connection.prepareStatement(FIND_ALL)) {
@@ -34,8 +37,6 @@ public class FlightDao implements Dao<Long, Flight> {
             }
 
             return flights;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
 
