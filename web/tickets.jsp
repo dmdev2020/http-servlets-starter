@@ -1,7 +1,9 @@
 <%@ page import="com.dmdev.http.service.TicketService" %>
 <%@ page import="com.dmdev.http.dto.TicketDto" %>
 <%@ page import="java.util.List" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%--<%@ taglib prefix="c" uri="http://mycompany.com" %>--%>
+<%--<%@ include file="index.html" %>--%>
 <html>
 <head>
     <title>Title</title>
