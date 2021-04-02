@@ -2,7 +2,7 @@
 <%@ page import="com.dmdev.http.dto.TicketDto" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
-<%--<%@ taglib prefix="c" uri="http://mycompany.com" %>--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--<%@ include file="index.html" %>--%>
 <html>
 <head>
