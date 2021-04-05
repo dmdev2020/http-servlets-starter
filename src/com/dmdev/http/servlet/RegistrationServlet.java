@@ -1,6 +1,8 @@
 package com.dmdev.http.servlet;
 
 import com.dmdev.http.dto.CreateUserDto;
+import com.dmdev.http.entity.Gender;
+import com.dmdev.http.entity.Role;
 import com.dmdev.http.exception.ValidationException;
 import com.dmdev.http.service.UserService;
 import com.dmdev.http.util.JspHelper;
@@ -11,7 +13,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet("/registration")
 public class RegistrationServlet extends HttpServlet {
@@ -20,8 +21,8 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("roles", List.of("USER", "ADMIN"));
-        req.setAttribute("genders", List.of("MALE", "FEMALE"));
+        req.setAttribute("roles", Role.values());
+        req.setAttribute("genders", Gender.values());
 
         req.getRequestDispatcher(JspHelper.getPath("registration"))
                 .forward(req, resp);
