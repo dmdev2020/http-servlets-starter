@@ -5,7 +5,11 @@ import com.dmdev.http.dto.CreateUserDto;
 import com.dmdev.http.exception.ValidationException;
 import com.dmdev.http.mapper.CreateUserMapper;
 import com.dmdev.http.validator.CreateUserValidator;
+import lombok.NoArgsConstructor;
 
+import static lombok.AccessLevel.PRIVATE;
+
+@NoArgsConstructor(access = PRIVATE)
 public class UserService {
 
     private static final UserService INSTANCE = new UserService();

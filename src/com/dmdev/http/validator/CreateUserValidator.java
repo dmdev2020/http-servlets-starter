@@ -4,7 +4,11 @@ import com.dmdev.http.dto.CreateUserDto;
 import com.dmdev.http.entity.Gender;
 import com.dmdev.http.entity.Role;
 import com.dmdev.http.util.LocalDateFormatter;
+import lombok.NoArgsConstructor;
 
+import static lombok.AccessLevel.PRIVATE;
+
+@NoArgsConstructor(access = PRIVATE)
 public class CreateUserValidator implements Validator<CreateUserDto> {
 
     private static final CreateUserValidator INSTANCE = new CreateUserValidator();

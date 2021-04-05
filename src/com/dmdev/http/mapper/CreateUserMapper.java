@@ -5,7 +5,11 @@ import com.dmdev.http.entity.Gender;
 import com.dmdev.http.entity.Role;
 import com.dmdev.http.entity.User;
 import com.dmdev.http.util.LocalDateFormatter;
+import lombok.NoArgsConstructor;
 
+import static lombok.AccessLevel.PRIVATE;
+
+@NoArgsConstructor(access = PRIVATE)
 public class CreateUserMapper implements Mapper<CreateUserDto, User> {
 
     private static final CreateUserMapper INSTANCE = new CreateUserMapper();
