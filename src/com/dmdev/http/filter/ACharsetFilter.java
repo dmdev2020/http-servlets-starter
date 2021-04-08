@@ -22,7 +22,7 @@ import java.nio.charset.StandardCharsets;
         },
         dispatcherTypes = DispatcherType.REQUEST
 )
-public class CharsetFilter implements Filter {
+public class ACharsetFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
