@@ -1,6 +1,7 @@
 package com.dmdev.http.servlet;
 
 import com.dmdev.http.dto.UserDto;
+import com.dmdev.http.util.UrlPath;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -9,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/sessions")
+@WebServlet(UrlPath.SESSIONS)
 public class SessionServlet extends HttpServlet {
 
     private static final String USER = "user";

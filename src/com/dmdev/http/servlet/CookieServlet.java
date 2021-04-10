@@ -1,5 +1,6 @@
 package com.dmdev.http.servlet;
 
+import com.dmdev.http.util.UrlPath;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
@@ -11,7 +12,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@WebServlet("/cookies")
+@WebServlet(UrlPath.COOKIES)
 public class CookieServlet extends HttpServlet {
 
     private static final String UNIQUE_ID = "userId";
@@ -26,7 +27,7 @@ public class CookieServlet extends HttpServlet {
                 .findFirst()
                 .isEmpty()) {
             var cookie = new Cookie(UNIQUE_ID, "1");
-            cookie.setPath("/cookies");
+            cookie.setPath(UrlPath.COOKIES);
             cookie.setMaxAge(15 * 60);
             resp.addCookie(cookie);
             counter.incrementAndGet();

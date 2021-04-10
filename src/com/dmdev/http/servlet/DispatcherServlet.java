@@ -1,5 +1,6 @@
 package com.dmdev.http.servlet;
 
+import com.dmdev.http.util.UrlPath;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -8,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/dispatcher")
+@WebServlet(UrlPath.DISPATCHER)
 public class DispatcherServlet extends HttpServlet {
 
     @Override
@@ -19,7 +20,7 @@ public class DispatcherServlet extends HttpServlet {
 //        var writer = resp.getWriter();
 //        writer.write("Hello 2");
 
-        resp.sendRedirect("/flights");
+        resp.sendRedirect(UrlPath.FLIGHTS);
 
 //        getServletContext().getRequestDispatcher()
 

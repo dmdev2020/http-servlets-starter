@@ -1,6 +1,7 @@
 package com.dmdev.http.filter;
 
 import com.dmdev.http.dto.UserDto;
+import com.dmdev.http.util.UrlPath;
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -21,7 +22,7 @@ public class UnsafeFilter implements Filter {
         if (user != null) {
             filterChain.doFilter(servletRequest, servletResponse);
         } else {
-            ((HttpServletResponse) servletResponse).sendRedirect("/registration");
+            ((HttpServletResponse) servletResponse).sendRedirect(UrlPath.REGISTRATION);
         }
     }
 }
