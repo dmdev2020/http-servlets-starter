@@ -11,6 +11,6 @@ public class LocaleRunner {
         System.out.println(Locale.getDefault());
 
         var translations = ResourceBundle.getBundle("translations", locale);
-        System.out.println(translations.getString("page.login.password1"));
+        System.out.println(translations.getString("page.login.password"));
     }
 }
