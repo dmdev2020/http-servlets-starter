@@ -17,4 +17,5 @@ public class UrlPath {
     public static final String DISPATCHER = "/dispatcher";
     public static final String COOKIES = "/cookies";
     public static final String CONTENT = "/content";
+    public static final String LOCALE = "/locale";
 }
